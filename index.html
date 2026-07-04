@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Открытка для мамы</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(to right, #ffe0f0, #fff5fa);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .envelope {
+      width: 80vw;
+      height: 50vh;
+      background: #d6336c;
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .flap {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 0;
+      border-left: 40vw solid transparent;
+      border-right: 40vw solid transparent;
+      border-bottom: 25vh solid #a61e4d;
+      transition: transform 1s;
+      transform-origin: top;
+    }
+    .letter {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #fff;
+      padding: 20px;
+      box-sizing: border-box;
+      transition: top 1s;
+      text-align: center;
+      font-size: 20px;
+      line-height: 1.6;
+      overflow-y: auto;
+    }
+    .open .flap {
+      transform: rotateX(180deg);
+    }
+    .open .letter {
+      top: 0;
+    }
+    button {
+      position: absolute;
+      bottom: 15px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #fff;
+      color: #d6336c;
+      border: none;
+      padding: 15px 35px;
+      font-size: 22px;
+      font-weight: bold;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="envelope" id="envelope">
+    <div class="flap"></div>
+    <div class="letter">
+      <h2>Любимой маме 💖</h2>
+      <p>
+        Дорогая мама, ты — самый светлый человек в моей жизни.  
+        Спасибо за твою бесконечную заботу, нежность и поддержку.  
+        Пусть каждый день дарит тебе радость, здоровье и улыбки.  
+        Ты заслуживаешь только счастья и тепла, ведь твое сердце — самое доброе.  
+        Я горжусь тобой и люблю тебя больше всего на свете! 🌸💐
+      </p>
+    </div>
+    <img src="photo_2026-07-05_00-15-19.jpg" alt="Букет для мамы">
+  </div>
+    <button onclick="openEnvelope()">Открыть письмо</button>
+  </div>
+
+  <script>
+    function openEnvelope() {
+      document.getElementById("envelope").classList.add("open");
+    }
+  </script>
+</body>
+</html>
